@@ -8,8 +8,8 @@ const lang = {
     gptSearchPlaceHolder: "आज आप क्या देखना चाहेंगे?",
   },
   spanish: {
-    search: "¿Qué te gustaría ver hoy?",
-    gptSearchPlaceHolder: "",
+    search: "Buscar",
+    gptSearchPlaceHolder: "¿Qué te gustaría ver hoy?",
   },
 };
 

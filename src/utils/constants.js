@@ -4,12 +4,11 @@ export const LOGO =
 export const USER_AVATAR =
   "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png";
 
-export const API_OPTIONS = {
+export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNThlNWVlYTVmZWQyZWNlNjU5NDU4OWIzZjg2ZDE1NSIsInN1YiI6IjY0ZjRkNGViNWYyYjhkMDBlMTJjMmQzYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5q7W6iv08CrTB0Y6w-_vBEr-FcFqBjXBvcv1EWQNl7U",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -23,3 +22,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;

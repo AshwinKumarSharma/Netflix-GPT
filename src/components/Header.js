@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
-import lang from "../utils/languageConstants";
 import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
@@ -55,9 +54,9 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between items-center">
-      <img className="w-44 " src={LOGO} alt="logo" />
-      {
+    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between items-center flex-col md:flex-row">
+      <img className="w-44 mx-auto md:" src={LOGO} alt="logo" />
+      {user && (
         <div className="flex items-center gap-3">
           {showGptSearch && (
             <select
@@ -77,9 +76,7 @@ const Header = () => {
           >
             {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
-          {user && (
-            <img className="w-12 h-12" alt="usericon" src={user?.photoURL} />
-          )}
+          {<img className="w-12 h-12" alt="usericon" src={user?.photoURL} />}
           <button
             onClick={handleSignOut}
             className="text-white font-bold text-lg"
@@ -87,7 +84,7 @@ const Header = () => {
             Sign Out
           </button>
         </div>
-      }
+      )}
     </div>
   );
 };
